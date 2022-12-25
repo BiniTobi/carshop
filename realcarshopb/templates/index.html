@@ -1,0 +1,143 @@
+{% load static %}
+<!-- {% static "images" as baseUrl %} -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cartita.com</title>
+	 <link rel="stylesheet" href="{% static 'style.css' %}">    
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+     <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css}"> -->
+</head>
+<body>
+<header>
+		<h2><a href="#">Carita.com</a></h2> 
+		<ul class="nav">  
+			<li><a href="#">Home</a></li>
+			<li><a href="#about">Cars</a></li> 
+			<li><a href="#services">Login</a></li>
+			<li><a href="#contact">Register</a></li> 
+		</ul>
+	</header>
+
+<section class="box">  
+		<video src="{% static 'bg.mp4' %}" autoplay muted loop></video>
+		<h1><span id="lefttxt">መኪና</span> ይግዙ-:-ይሽጡ</h1> 
+		<h3>መኪና ለመግዛት እና ለመሸጥ ትክክለኛው ቦታ</h3>
+		<a href="#" class="boxBtn">መኪና ተመልከት</a>   
+	</section>
+        <h1 style="color: black; background-color: yellow; text-align: center; margin-bottom: 1em;">ሁሉንም አይነት መኪና እኛ ጋር ያገኛሉ</h1>
+        <div class="direction">
+          <h3 style="color:white ">ይጫኑት</h3>
+          <button id="prev"> < </button>
+          <button id="next"> > </button>
+      </div>
+
+        <div id="formList">
+          <div id="list">
+            {% for homecars in homecars %}
+              <div class="item">
+                  <img src="{{homecars.img.url}}" class="avatar">
+                  <div class="content">
+                      <table width="100%" cellspacing="0">
+                          <tr>
+                              <td>ስም:-</td>
+                              <td> {{homecars.name}}</td>
+                          </tr>
+                          <tr>
+                              <td>ሞዴል:-</td>
+                              <td>{{homecars.model}}</td>
+                          </tr>
+                          <tr>
+                              <td>ዋጋ:-</td>
+                              <td>{{homecars.price}}</td>
+                          </tr>
+                          <tr>
+                              <td colspan="2" class="nameGroup"><a href="{% url 'detail' homecars.id %}" style="cursor: pointer;">ሙሉ መረጃ ተመልከት<a/></td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+            {% endfor %}         
+             
+     
+            
+          </div>
+      </div>
+     
+      
+     
+
+
+    <!-- <h1 style="color: black; background-color: yellow; text-align: center; margin-top: 1em;">ሁሉንም አይነት መኪና እኛ ጋር ያገኛሉ</h1> -->
+
+
+
+
+
+    <h1 style="color: black; background-color: yellow; text-align: center; margin-bottom: 1em;">ያለምንም ጭማሪ ቀጥታ ከሻጩ ጋራ እና ገዢው ጋር ይገናኙ.</h1>
+
+
+
+
+
+
+     <div class="top3sale">
+        <h1 style="color: whitesmoke; text-align: center; margin: 15px;">የወርሩ ምርጥ 3 መኪናዎች</h1>
+     </div>
+
+
+    <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+      
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+                <img src="{% static '/images/car1.png'%}">
+
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">26 December 2019</span>
+              <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+              <a href="#" class="blog-slider__button">READ MORE</a>
+            </div>
+          </div>
+          
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+                <img src="{% static '/images/car2.png'%}">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">26 December 2019</span>
+              <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
+              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+              <a href="#" class="blog-slider__button">READ MORE</a>
+            </div>
+          </div>
+          
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+                <img src="{% static '/images/car3.png'%}">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">26 December 2019</span>
+              <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+              <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+              <a href="#" class="blog-slider__button">READ MORE</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
+      
+      
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script type="text/javascript" src="{% static 'script.js' %}"></script>
+</body>
+</html>

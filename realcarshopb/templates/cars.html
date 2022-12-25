@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>CODE WITH HOSSEIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BoxIcons v2.1.2 -->
+    <!-- <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"> -->
+
+    <!-- Montserrat Font -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> -->
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="{% static 'cars.css' %}">    
+
+
+</head>
+
+<body>
+   
+     
+    <h2 style="color: white;">All Cars </h2>
+    <div class="container">
+        {% for cars in cars %}
+        <div class="card">
+            <div class="card-image">
+                <img src="{{cars.img.url}}" class="avatar">
+                <i class="bx bx-star"></i>
+            </div>
+            <div class="card-content">
+                <h3>{{cars.name}}</h3>
+                <p>ሞዴል፡ <span>{{cars.model}}</span> </p>
+                <p>ዋጋ፦ <span>{{cars.price}}</span> </p>
+
+                <button class="add-to-cart">
+                   <a href="{% url 'detail' cars.id %}"> ሙሉ መረጃ</a>
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    
+
+        
+    </div>
+
+</body>
+
+</html>

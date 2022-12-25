@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card/Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'detail.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+   
+    
+    <div class = "card-wrapper">
+      <div class = "card">
+        <!-- card left -->
+        <div class = "product-imgs">
+          <div class = "img-display">
+            <div class = "img-showcase">
+              <img src = "{{obj.img.url}}" >
+              
+            </div>
+          </div>
+   
+        </div>
+        <!-- card right -->
+        <div class = "product-content">
+          
+          <a href = "/" class = "product-link">ወደዋናው ገጽ ይመለሱ</a>
+        
+          <div class = "product-price">
+            <p class = "last-price">የበፊት ዋጋ: <span>1,500000 Birr</span></p>
+            <p class = "new-price">የአሁን ዋጋ: <span>1,200000 Birr</span></p>
+          </div>
+
+          <div class = "product-detail">
+            <h2>ስለመኪናው ሙሉ መረጃ</h2>
+            <p>ስድፍስድፍስድፍስድፍ ስድፍስድ ፍድስፍ ስድፍስድ ፍስድፍ ድስፍስድፍድስፍ ስድፍድስፈ3ፍ ድስፍስድ ፍድስ ፍድስ ፍስድፍ ስድፍስድፍ ድስፍስድ ፍስድ ፍስድ ፍስድፍ ስድፍ</p>
+            <ul>
+              <li>Name of the car / የመኪናው ዓየነት:- <span>{{obj.name}}</span></li>
+              <li>Model / ሞዴል:-<span>{{obj.model}}</span></li>
+              <li>Transmission/ ትራንስሚሽን:- <span>{{obj.transmition}}</span></li>
+              <li>Original left Hand or Not/ መሪ የዞረ ወይስ ያልዞረ<span>{{obj.original}}</span></li>
+              <li>CC/ የመኪናው ሲሲ:-<span>{{obj.cc}}</span></li>
+              <li>Plate # / ታርጋ :-<span>{{obj.plate}}</span></li>
+              <li>Condition:-<span>{{obj.condition}}</span></li>
+              
+            </ul>
+            <p>We Ask commission  
+              COMMISSION POLICY, For any asset sells 2% according to Ethiopian law</p>
+          </div>
+
+          <div class = "purchase-info">
+          
+            <button type = "button" class = "btn">
+              መግዛት እፈልጋለሁ <i class = "fas fa-car"></i>
+            </button>
+            <button type = "button" class = "btn">በማንኛውም የስራ ሰአት የኛ ቡድን ዝግጁ ነው፡፡ </button>
+          </div>
+
+          <div class = "social-links">
+            <p>Share At: </p>
+            <a href = "#">
+              <i class = "fab fa-facebook-f"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-twitter"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-instagram"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-whatsapp"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="{% static 'script.js'%}"></script>
+  </body>
+</html>

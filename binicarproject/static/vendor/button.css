@@ -1,0 +1,28 @@
+.button{
+    text-decoration: none;
+    color: black;
+    background: lime;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 55px lightgreen;
+  }
+  .glow-button:hover {
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  }
+  .button2{
+    text-decoration: none;
+    color: white;
+    background: red;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 55px lightgreen;
+  }
+  .glow2-button:hover {
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  }
